@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title> Contact Form </title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel='icon' href='images/favicon.png' />
+    <script src = "https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    
+    <div class = "container">
+
+        <form id = "myForm">
+            <h1 class = "main_heading"> Contact Form </h1>
+            <hr>
+            <p class = "warning"> --> fields marked with * are required </p>
+            <h2> User Information </h2>
+            <p> Name: * <input type = "text" name = "Name" required placeholder = "enter your name" ></p>
+            <p> Phone: * <input type = "number" name = "Phone" id = "phone" required placeholder = "enter phone number" ></p>
+            <p> Email: * <input type = "email" name="Email" id="Email" required placeholder = "xyz@gmail.com" ></p>
+            <p>Your Query: * <textarea name = "Address" id = "Address" cols = "100" rows = "8" required placeholder = "your query goes here ...." ></textarea></p>
+
+            <h2> Captcha Verification </h2>
+            <div class = "g-recaptcha" data-sitekey = "6Ld-8k4lAAAAAFWtIUSdlZp6siW9jIApOzoZY44X" ></div>
+            <input type= "submit" id = "myButton" value = "Contact Us">
+        </form>
+        
+        <script>
+            function onloadCallback() {
+              grecaptcha.render('g-recaptcha', {
+                'sitekey': '6Ld-8k4lAAAAAFWtIUSdlZp6siW9jIApOzoZY44X'
+              });
+            }
+            document.getElementById('myButton').addEventListener('click', function(event) {
+              event.preventDefault();
+              if (grecaptcha.getResponse() == '') {
+                alert('Please verify that you are not a robot.');
+              } else {
+                document.getElementById('myForm').submit();
+                alert('thank you for contacting us, we will get back to you soon');
+              }
+            });
+        </script>
+            
+        <script src = "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer ></script>
+
+    
+    </div>
+
+</body>
+</html>
