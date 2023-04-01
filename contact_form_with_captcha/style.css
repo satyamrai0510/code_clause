@@ -59,6 +59,6 @@ input[type="submit"]:hover
 
 .g-recaptcha
 {
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
 }
