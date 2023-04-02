@@ -57,6 +57,13 @@ input[type="submit"]:hover
     background-color: blue;
 }
 
+@media only screen and (max-width: 1080px){
+    .g-recaptcha
+    {
+        width: 70%;
+    }
+}
+
 .g-recaptcha
 {
     margin-left: 11px;
