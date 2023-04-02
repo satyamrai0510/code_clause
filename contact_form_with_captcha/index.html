@@ -4,6 +4,7 @@
     <meta charset = "UTF-8">
     <meta http-equiv = "X-UA-Compatible" content="IE=edge">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    
     <title> Contact Form </title>
     <link rel = "stylesheet" href = "style.css">
     <link rel='icon' href='images/favicon.png' />
@@ -14,40 +15,39 @@
     
     <div class = "container">
 
-        <form id = "myForm">
+        <form id = "myForm" action="#" onsubmit="return validateForm()">
+          
             <h1 class = "main_heading"> Contact Form </h1>
             <hr>
             <h2> User Information </h2>
-            <p> Name: <input type = "text" name = "Name" placeholder = "enter your name" ></p>
-            <p> Phone: <input type = "number" name = "Phone" id = "phone" placeholder = "enter phone number" ></p>
-            <p> Email: <input type = "email" name="Email" id="Email" placeholder = "xyz@gmail.com" ></p>
-            <p>Your Query: <textarea name = "Address" id = "Query" cols = "100" rows = "8" placeholder = "your query goes here ...." ></textarea></p>
+
+            <label for="name">Name:</label>
+            <span id="nameError" class="error"></span>
+		        <input type="text" id="name" name="name">
+          
+            <label for="phone">Phone:</label>
+            <span id="phoneError" class="error"></span>
+	         	<input type="tel" id="phone" name="phone">
+       
+            <label for="email">Email:</label>
+            <span id="emailError" class="error"></span>
+		        <input type="email" id="email" name="email">
+
+            <label for="query">Query:</label>
+            <span id="queryError" class="error"></span>
+            <textarea id="query" name="query"></textarea>
 
             <h2> Captcha Verification </h2>
+
+            <span id="g-recaptcha-error" class="error"></span>
             <div class = "g-recaptcha" data-sitekey = "6Ld-8k4lAAAAAFWtIUSdlZp6siW9jIApOzoZY44X" ></div>
             <input type= "submit" id = "myButton" value = "Contact Us">
+            
         </form>
         
-        <script>
-            function onloadCallback() {
-              grecaptcha.render('g-recaptcha', {
-                'sitekey': '6Ld-8k4lAAAAAFWtIUSdlZp6siW9jIApOzoZY44X'
-              });
-            }
-            document.getElementById('myButton').addEventListener('click', function(event) {
-              event.preventDefault();
-              if (grecaptcha.getResponse() == '') {
-                alert('Please verify that you are not a robot.');
-              } else {
-                document.getElementById('myForm').submit();
-                alert('thank you for contacting us, we will get back to you soon');
-              }
-            });
-        </script>
-            
+        <script src="script.js"></script>
         <script src = "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer ></script>
 
-    
     </div>
 
 </body>

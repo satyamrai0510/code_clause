@@ -19,12 +19,12 @@ body
     border-radius: 4px;
 }
 
-p{
+label{
     margin-left: 2px;
 }
 
 input[type="text"],
-input[type="number"],
+input[type="tel"],
 input[type="email"],
 textarea
 {
@@ -33,6 +33,19 @@ textarea
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 10px;
+}
+
+.error
+{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#g-recaptcha-error {
+    color: red;
+    font-size: 12px;
+    margin-left: 11px;
 }
 
 .main_heading
@@ -59,7 +72,8 @@ input[type="submit"]:hover
 
 .g-recaptcha
 {
+    /* width: 100%; */
+    margin-top: 10px;
     margin-left: 11px;
-    width: 100%;
     margin-bottom: 20px;
 }
