@@ -57,6 +57,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
   event.target.reset();
 });
 
+// Function to sort the table based on the selected option
 function sortTable(option) {
   const rows = Array.from(tableBody.querySelectorAll('tr'));
   const sortDirection = option.endsWith('asc') ? 1 : -1;
