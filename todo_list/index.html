@@ -5,46 +5,71 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
     <div class="container">
+
       <h1>To-Do List</h1>
+
       <form>
+
         <label for="task-name">Task Name:</label>
         <input type="text" id="task-name" name="task-name" required>
+
         <label for="due-date">Due Date:</label>
         <input type="date" id="due-date" name="due-date" required>
+
         <label for="priority">Priority:</label>
         <select id="priority" name="priority">
+
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>
+
         </select>
+
         <button type="submit">Add Task</button>
+
       </form>
+
       <div class="filters">
+
         <label for="sort-by">Sort By:</label>
+
         <select id="sort-by">
+
           <option value="date-asc">Due Date (Ascending)</option>
           <option value="date-desc">Due Date (Descending)</option>
           <option value="priority-asc">Priority (Ascending)</option>
           <option value="priority-desc">Priority (Descending)</option>
+
         </select>
+
         <input type="text" id="filter" placeholder="Filter Tasks">
         
       </div>
+
       <table id="task-list">
+
         <thead>
+
           <tr>
             <th>Task Name</th>
             <th>Due Date</th>
             <th>Priority</th>
             <th>Action</th>
           </tr>
+
         </thead>
+
         <tbody>
           <!-- Task items will be added dynamically here -->
         </tbody>
+
       </table>
+
     </div>
+
     <script src="script.js"></script>
+    
   </body>
 </html>
